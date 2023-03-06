@@ -14,9 +14,17 @@ import constants.constants;
  */
 public class RegistryFile extends XMLFiles {
 
-    public RegistryFile(String path) {
+    private static RegistryFile registryFile;
+    private RegistryFile(String path) {
         super(path);
     }
+
+    public static RegistryFile GetRegistryFile(String path)
+    {
+        if(registryFile==null) registryFile= new RegistryFile(path);
+        return registryFile;
+    }
+
 
     void createFile() {
         Element rootElem = doc.createElement("root");
