@@ -35,7 +35,7 @@ public class cli {
     public static void main(String[] args) {
         print(constants.HEADING);
 
-        registry = new RegistryFile(constants.DATA_XML_PATH);
+        registry = RegistryFile.GetRegistryFile(constants.DATA_XML_PATH);
         Scanner input = new Scanner(System.in);
 
         while (true) {
